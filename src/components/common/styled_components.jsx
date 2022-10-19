@@ -1,7 +1,7 @@
-import styled, { keyframes } from 'styled-components';
-import { merge, fadeInLeft, fadeOutLeft, fadeIn } from 'react-animations';
-import { colors, constants, fonts } from './styled_theme';
-import cursor_image from './../../assets/images/cursor/FF7Cursor.png';
+import styled, { keyframes } from "styled-components";
+import { merge, fadeInLeft, fadeOutLeft, fadeIn } from "react-animations";
+import { colors, constants, fonts } from "./styled_theme";
+import cursor_image from "./../../assets/images/cursor/FF7Cursor.png";
 
 const animationShow = keyframes`${merge(fadeInLeft, fadeIn)}`;
 const animationHide = keyframes`${merge(fadeOutLeft, fadeIn)}`;
@@ -25,12 +25,12 @@ export const Video = styled.video`
 `;
 
 export const Container = styled.div`
-  display: ${(props) => (props.isShown ? 'block' : 'none')};
+  display: ${(props) => (props.isShown ? "block" : "none")};
   border-left: 2px solid #fff;
   margin-bottom: ${constants.paddings.lg}px;
   position: relative;
   &:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     margin-left: 0;
@@ -59,7 +59,7 @@ export const ContainerHeader = styled.p`
   padding: ${constants.paddings.md}px ${constants.paddings.md}px;
 
   &:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     margin-left: -${constants.paddings.md}px;
@@ -86,7 +86,7 @@ export const ContainerBody = styled.div`
   width: 100%;
   font-size: ${fonts.size.lg}px;
   &:before {
-    content: '';
+    content: "";
     width: inherit;
     height: 2px;
     margin-left: -${constants.paddings.md}px;
@@ -115,13 +115,13 @@ export const ScreenWithVideoContainer = styled.div`
 
 export const Screen = styled.div`
   display: flex;
-  position: ${(props) => props.video && 'absolute'};
+  position: ${(props) => props.video && "absolute"};
   left: 0;
   top: 0;
   flex: 1;
   box-sizing: border-box;
   height: 100vh;
-  justify-content: ${(props) => (props.spaceBetween ? 'space-between' : '')};
+  justify-content: ${(props) => (props.spaceBetween ? "space-between" : "")};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -152,7 +152,7 @@ export const ScreenName = styled.div`
 
 export const ScreenContent = styled.div`
   flex: 1;
-  overflow-x: scroll;
+  overflow-x: hidden;
   padding-left: ${(props) => (props.screenName ? constants.paddings.lg : 0)}px;
 `;
 export const LoginMonitor = styled.div`
@@ -208,7 +208,7 @@ export const FadedContainer = styled.div`
   display: flex;
   align-items: flex-end;
   animation: 0.2s
-    ${(props) => (props.type === 'in' ? animationShow : animationHide)};
+    ${(props) => (props.type === "in" ? animationShow : animationHide)};
 `;
 
 export const CardCenterWrapper = styled.div`
@@ -220,10 +220,10 @@ export const CardCenterWrapper = styled.div`
 
 export const CardRoleImage = styled.img`
   object-fit: cover;
-  height: ${(props) => (props.icon ? '50px' : '100%')};
-  position: ${(props) => (props.icon ? 'absolute' : 'relative')};
-  top: ${(props) => (props.icon ? '12px' : '')};
-  left: ${(props) => (props.icon ? '12px' : '')};
+  height: ${(props) => (props.icon ? "50px" : "100%")};
+  position: ${(props) => (props.icon ? "absolute" : "relative")};
+  top: ${(props) => (props.icon ? "12px" : "")};
+  left: ${(props) => (props.icon ? "12px" : "")};
 `;
 export const CardLabel = styled.p`
   color: ${colors.white};
@@ -340,7 +340,7 @@ export const AnimatedDiv = styled.div`
       );
 
       &:before {
-        content: '';
+        content: "";
         background-image: url(${cursor_image});
         background-size: ${constants.cursor_height}px;
         background-repeat: no-repeat;
@@ -388,7 +388,7 @@ export const Input = (props) => {
       <label htmlFor="filled-adornment-password">{props.label}</label>
       <div className="input_icon_container">
         <input
-          style={props.icon && { marginLeft: '8px' }}
+          style={props.icon && { marginLeft: "8px" }}
           className="input_value"
           variant="standard"
           autoComplete="autofill"
