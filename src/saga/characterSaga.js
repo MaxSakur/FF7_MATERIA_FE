@@ -1,9 +1,9 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
-import api from '../api';
+import { put, takeEvery, call } from "redux-saga/effects";
+import api from "../api";
 import {
   registerCharacterAC,
   UPDATE_CHARACTER,
-} from '../store/reducers/characterReduser';
+} from "../store/reducers/characterReduser";
 
 // WORKERS
 function* updateCharacterWorker(action) {
@@ -11,7 +11,7 @@ function* updateCharacterWorker(action) {
   if (response.status === 200) {
     yield put(registerCharacterAC(response.data.isCharacterRegistered));
   } else {
-    console.warn('updateCharacterWorker error', response);
+    console.warn("updateCharacterWorker error", response);
   }
 }
 

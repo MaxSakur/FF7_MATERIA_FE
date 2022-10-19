@@ -1,9 +1,9 @@
-import createSagaMiddleware from 'redux-saga';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { createBrowserHistory } from 'history';
-import { rootReducer } from './reducers';
-import { rootSaga } from '../saga';
-import { createLogger } from 'redux-logger';
+import createSagaMiddleware from "redux-saga";
+import { createStore, applyMiddleware, compose } from "redux";
+import { createBrowserHistory } from "history";
+import { rootReducer } from "./reducers";
+import { rootSaga } from "../saga";
+import { createLogger } from "redux-logger";
 
 // Store
 const middleware = (store) => (next) => (action) => {
@@ -14,9 +14,10 @@ export const history = createBrowserHistory();
 export default function getStore(initialState = {}) {
   const sagaMiddleware = createSagaMiddleware({
     onError: (error) => {
-      console.log('error', error);
+      console.log("error", error);
     },
   });
+
   const store = createStore(
     rootReducer,
     initialState,
@@ -24,9 +25,9 @@ export default function getStore(initialState = {}) {
       applyMiddleware(
         sagaMiddleware,
         middleware,
-        createLogger({ collapsed: true }),
-      ),
-    ),
+        createLogger({ collapsed: true })
+      )
+    )
   );
 
   sagaMiddleware.run(rootSaga);

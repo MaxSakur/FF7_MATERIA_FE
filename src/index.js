@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import getStore, { history } from "./store";
 import "./utils/i18next.js";
-
-// Use
 
 // Add import { toast } from 'react-toastify';
 
@@ -15,9 +15,11 @@ const store = getStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <App history={history} />
-    </Router>
+    <DndProvider backend={HTML5Backend}>
+      <Router history={history}>
+        <App history={history} />
+      </Router>
+    </DndProvider>
   </Provider>,
   document.getElementById("root")
 );

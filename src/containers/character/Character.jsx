@@ -1,6 +1,6 @@
-import { DragSlot, DragItem, CharacterSlot } from './Slots';
-import test_sword_image from './../../assets/images/equipment/swords/buster.png';
-import './styles.css';
+import { DragSlot, DragItem, CharacterSlot } from "./Slots";
+import test_sword_image from "./../../assets/images/equipment/swords/buster.png";
+import "./styles.css";
 
 // DND
 

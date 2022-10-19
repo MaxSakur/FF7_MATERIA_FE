@@ -1,15 +1,14 @@
-export const MALE = 'male';
-export const FEMALE = 'female';
-export const REGISTER_CHARACTER = 'REGISTER_CHARACTER';
-export const CHANGE_CHARACTER_GENDER = 'CHANGE_CHARACTER_GENDER';
-export const CHANGE_CHARACTER_RACE = 'CHANGE_CHARACTER_CLASS';
-export const CHANGE_CHARACTER_ROLE = 'CHANGE_CHARACTER_ROLE';
-export const UPDATE_CHARACTER = 'UPDATE_CHARACTER';
+export const MALE = "male";
+export const FEMALE = "female";
+export const REGISTER_CHARACTER = "REGISTER_CHARACTER";
+export const CHANGE_CHARACTER_GENDER = "CHANGE_CHARACTER_GENDER";
+export const CHANGE_CHARACTER_RACE = "CHANGE_CHARACTER_CLASS";
+export const CHANGE_CHARACTER_ROLE = "CHANGE_CHARACTER_ROLE";
+export const UPDATE_CHARACTER = "UPDATE_CHARACTER";
 
 const defaultState = {
   isCharacterRegistered: false,
   gender: null,
-  race: null,
   role: null,
 };
 
@@ -24,11 +23,6 @@ const characterReducer = (state = defaultState, action) => {
       return {
         ...state,
         gender: action.payload.gender,
-      };
-    case CHANGE_CHARACTER_RACE:
-      return {
-        ...state,
-        race: action.payload.race,
       };
     case CHANGE_CHARACTER_ROLE:
       return {
@@ -50,12 +44,7 @@ export const changeCharactersGenderAC = (gender) => ({
     gender,
   },
 });
-export const changeCharactersRaceAC = (race) => ({
-  type: CHANGE_CHARACTER_RACE,
-  payload: {
-    race,
-  },
-});
+
 export const changeCharactersRoleAC = (role) => ({
   type: CHANGE_CHARACTER_ROLE,
   payload: {

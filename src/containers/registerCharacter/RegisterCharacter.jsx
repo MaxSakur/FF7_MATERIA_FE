@@ -7,19 +7,16 @@ import { updateCharacterAC } from "../../store/reducers/characterReduser";
 import BG from "./../../assets/video/videoBG4.mp4";
 
 export const RegisterCharacter = () => {
-  const { gender, race, role } = useSelector((store) => store.character);
+  const { gender, role } = useSelector((store) => store.character);
   const dispatch = useDispatch();
-  const hangleButtonClick = (gender, race, role) => {
-    dispatch(updateCharacterAC(gender, race, role));
+  const hangleButtonClick = (gender, role) => {
+    dispatch(updateCharacterAC(gender, role));
   };
   return (
     <Screen video={BG} screenName="Registration">
       <CharacterInfo />
       <RolePicker />
-      <Button
-        text="register"
-        onClick={() => hangleButtonClick(gender, race, role)}
-      />
+      <Button text="register" onClick={() => hangleButtonClick(gender, role)} />
     </Screen>
   );
 };

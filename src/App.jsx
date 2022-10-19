@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-// import { DndProvider } from 'react-dnd';
-// import { HTML5Backend } from 'react-dnd-html5-backend';
 import { autorizeAC } from "./store/reducers/userReducer";
 import LoginScreenContainer from "./containers/LoginScreenContainer";
 import Lobby from "./containers/lobbyContainer";
@@ -31,10 +29,6 @@ function App() {
         </Routes>
       )}
     </>
-    // <BrowserRouter>
-    //   {/* TODO: Move DNDProvider inside screen where it really needed */}
-    //   <DndProvider backend={HTML5Backend}>{useRoutes(isLogged)}</DndProvider>
-    // </BrowserRouter>
   );
 }
 

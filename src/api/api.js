@@ -20,7 +20,6 @@ export const login = async ({ email, password }) => {
     email,
     password,
   });
-  console.log("login", response);
   return response;
 };
 
@@ -33,10 +32,9 @@ export const registration = async ({ email, password }) => {
   return response;
 };
 
-export const characterRegistration = async ({ gender, race, role }) => {
+export const characterRegistration = async ({ gender, role }) => {
   const response = await axios.post("/user/registerCharacter", {
     gender,
-    race,
     role,
   });
   console.log("characterRegistration", response);
