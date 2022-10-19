@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+  background-color: #000;
+}
+
+.fullHeigth div {
+  min-height: 100%;
+}
+
+:root {
+  /* Sizes */
+  --cursor_height: 50px;
+
+  /* Colors */
+  --border_accent_color: #001534;
+  --border_accent_color_rgb: 0, 21, 52;
+  --border_secondary_color: #4f8bbd;
+  --border_secondary_color_rgb: 79, 139, 189;
+  --border_side_color: #4bb0e9;
+  --border_side_color_rgb: 75, 176, 233;
+  --label_color: #21aeca;
+}
