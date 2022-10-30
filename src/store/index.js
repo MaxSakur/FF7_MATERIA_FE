@@ -11,6 +11,7 @@ const middleware = (store) => (next) => (action) => {
 };
 
 export const history = createBrowserHistory();
+
 export default function getStore(initialState = {}) {
   const sagaMiddleware = createSagaMiddleware({
     onError: (error) => {

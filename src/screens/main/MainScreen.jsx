@@ -5,7 +5,8 @@ import Screen from "../../components/screen";
 import { logOutAC } from "../../store/reducers/userReducer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import BG from "./../../assets/video/videoBG4.mp4";
+// @ts-ignore: Local storage using
+// import BG from "/video/videoBG4.mp4";
 
 export const MainScreen = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,7 @@ export const MainScreen = () => {
     dispatch(logOutAC());
   };
   return (
-    <Screen video={BG} screenName="Main">
-      {/* TODO: Add routes for main screen */}
+    <Screen video="./../../assets/video/videoBG4.mp4" screenName="Main">
       <DndProvider backend={HTML5Backend}>
         <Character />
       </DndProvider>
