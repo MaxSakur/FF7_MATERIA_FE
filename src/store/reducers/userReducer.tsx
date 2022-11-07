@@ -10,7 +10,7 @@ export const REGISTRATION = "REGISTRATION";
 
 export type UserReducerState = {
   user: any;
-  isLogged: false;
+  isLogged: boolean;
 };
 
 const initialState = {
@@ -23,6 +23,7 @@ type SetUserActionType = {
   payload: {
     user: any;
     isLogged: boolean;
+    token: string;
   };
 };
 
@@ -38,6 +39,7 @@ const userReducer = (state = initialState, action: UserReducerActions) => {
       return {
         ...state,
         user: action.payload.user,
+        token: action.payload.token,
         isLogged: true,
       };
     case LOG_OUT:

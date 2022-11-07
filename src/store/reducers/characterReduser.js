@@ -38,6 +38,7 @@ export const registerCharacterAC = (isCharacterRegistered) => ({
   type: REGISTER_CHARACTER,
   payload: { isCharacterRegistered },
 });
+
 export const changeCharactersGenderAC = (gender) => ({
   type: CHANGE_CHARACTER_GENDER,
   payload: {
@@ -51,6 +52,7 @@ export const changeCharactersRoleAC = (role) => ({
     role,
   },
 });
+
 export const updateCharacterAC = (gender, race, role) => ({
   type: UPDATE_CHARACTER,
   payload: {

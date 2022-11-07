@@ -1,42 +1,59 @@
 import axios from "axios";
+import { TOKEN } from "../constants";
+import { MessageType, showMessage } from "../utils/showError";
 
-axios.defaults.baseURL = "http://195.16.88.133:5000/api";
+const LOCAL = "http://localhost:5000";
+// const REMOTE = "http://195.16.88.133:5000";
+
+axios.defaults.baseURL = `${LOCAL}/api`;
 axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem(
-  "user_token"
+  TOKEN
 )}`;
 
 export const authorize = async () => {
   try {
-    const response = await axios.get("/auth/auth");
-    console.log("authorize", response);
+    const response = await axios.get("/auth/rehydrate");
     return response;
   } catch (error) {
-    return false;
+    showMessage(MessageType.error, error);
   }
 };
 
 export const login = async ({ email, password }) => {
-  const response = await axios.post("/auth/login", {
-    email,
-    password,
-  });
-  return response;
+  try {
+    const response = await axios.post("/auth/login", {
+      email,
+      password,
+    });
+
+    return response;
+  } catch (error) {
+    showMessage(MessageType.error, error);
+  }
 };
 
 export const registration = async ({ email, password }) => {
-  const response = await axios.post("/auth/registration", {
-    email,
-    password,
-  });
-  console.log("registration", response);
-  return response;
+  try {
+    const response = await axios.post("/auth/registration", {
+      email,
+      password,
+    });
+
+    return response;
+  } catch (error) {
+    showMessage(MessageType.error, error);
+  }
 };
 
 export const characterRegistration = async ({ gender, role }) => {
-  const response = await axios.post("/user/registerCharacter", {
-    gender,
-    role,
-  });
-  console.log("characterRegistration", response);
-  return response;
+  try {
+    const response = await axios.post("/user/registerCharacter", {
+      gender,
+      role,
+    });
+
+    return response;
+  } catch (error) {
+    showMessage(MessageType.error, error);
+  }
 };

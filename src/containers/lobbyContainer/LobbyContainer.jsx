@@ -8,7 +8,7 @@ export const LobbyContainer = () => {
   const isCharacterRegistered = useSelector(
     (store) => store.character.isCharacterRegistered
   );
-  console.log(isCharacterRegistered);
+  console.log("isCharacterRegistered", isCharacterRegistered);
   return (
     <>
       {isCharacterRegistered ? <MainScreen /> : <RegisterCharacter />}

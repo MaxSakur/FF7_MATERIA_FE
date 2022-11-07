@@ -11,6 +11,7 @@ export const RegisterCharacter = () => {
   const dispatch = useDispatch();
   const hangleButtonClick = (gender, role) => {
     dispatch(updateCharacterAC(gender, role));
+    // ADD LOGIC TO UPDATE IS_REGISTERED STATUS
   };
   return (
     <Screen screenName="Registration">

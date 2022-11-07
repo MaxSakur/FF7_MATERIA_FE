@@ -8,6 +8,8 @@ import {
 // WORKERS
 function* updateCharacterWorker(action) {
   const response = yield call(api.characterRegistration, action.payload);
+  console.log(response, "updateCharacterWorker");
+  console.log(response);
   if (response.status === 200) {
     yield put(registerCharacterAC(response.data.isCharacterRegistered));
   } else {

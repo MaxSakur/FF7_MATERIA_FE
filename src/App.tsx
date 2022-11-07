@@ -4,11 +4,12 @@ import { Route, Routes } from "react-router-dom";
 import { autorizeAC, UserReducerState } from "./store/reducers/userReducer";
 import LoginScreenContainer from "./containers/LoginScreenContainer";
 import Lobby from "./containers/lobbyContainer";
+import { TOKEN } from "./constants";
 import "./styles.css";
 
 function App() {
   const dispatch = useDispatch();
-  const token = localStorage.getItem("user_token") || "";
+  const token = localStorage.getItem(TOKEN) || "";
   const isLogged = useSelector(
     (store: UserReducerState) => store.user.isLogged
   );
@@ -19,11 +20,14 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
+  console.log("isLogged", isLogged);
+
   return (
     <>
       {isLogged ? (
         <Routes>
-          <Route path="*" index element={<Lobby />} />
+          {/* TODO: Update route logic */}
+          <Route index path="*" element={<Lobby />} />
         </Routes>
       ) : (
         <Routes>
